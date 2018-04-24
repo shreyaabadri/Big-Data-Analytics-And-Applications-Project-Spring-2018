@@ -1,9 +1,0 @@
-public class ImageAnnotation {
-    public static void main(String[] args) throws IOException {
-        File o = new File("output/output.txt");
-        o.delete();
-        //actual real api key b14627f026204c0e9aea601882050ac1
-        //this is for some fake account
-        final ClarifaiClient client = new ClarifaiBuilder("ca35bf01d28e4f6e90648399f259111d")
-                .client(new OkHttpClient())
-                .buildSync();
