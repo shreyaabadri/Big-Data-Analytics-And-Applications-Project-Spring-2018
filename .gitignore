@@ -3,3 +3,7 @@
 **/.idea/
 **/data/food_photos/
 **/Tensorflow_Inception/test
+**/bottlenecks/
+**/api key.txt
+**/retrain_logs/
+**/inception/
