@@ -17,6 +17,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.Locale;
+
+
 public class History extends AppCompatActivity {
     Button btnAddFood;
     TextView textView;
@@ -47,10 +54,10 @@ public class History extends AppCompatActivity {
         BufferedReader br = new BufferedReader(isr);
 
         String test;
-        int anzahl=0;
+        int count=0;
         try{
             while ((test=br.readLine()) != null){
-                anzahl++;
+                count++;
             }
         }
         catch (IOException e) {e.printStackTrace();}
@@ -60,7 +67,7 @@ public class History extends AppCompatActivity {
         }
         catch (IOException e) {e.printStackTrace();}
 
-        String[] array = new String[anzahl];
+        String[] array = new String[count];
 
         String line;
         int i = 0;
@@ -75,6 +82,7 @@ public class History extends AppCompatActivity {
     }
 
     public void load() {
+        String date = new SimpleDateFormat("yyyy/MM/dd HH:mm", Locale.getDefault()).format(new Date());
         String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/MyHistory";
         String[] loadtext = Load(new File(path + "/history.txt"));
 
@@ -83,7 +91,18 @@ public class History extends AppCompatActivity {
         for (int i = 0; i < loadtext.length; i++) {
             finaltext += loadtext[i] + System.getProperty("line.separator");
         }
-
+        finaltext = finaltext.substring(1, finaltext.length() - 2);
+        String[] records = finaltext.split("\\}\\{");
+        String[] record;
+        finaltext = "";
+        System.out.println();
+        for (int x = 0; x < records.length; x++){
+            record = records[x].split(",");
+            String part1 = record[0].split(":")[1];
+            part1 = part1.substring(2, part1.length() - 1);
+            String part2 = record[1].split(":")[1];
+            finaltext += date + "\t\t" + part1 +"\t\t\t\t\t" + part2 + "\n";
+        }
         textView.setText(finaltext);
     }
 }

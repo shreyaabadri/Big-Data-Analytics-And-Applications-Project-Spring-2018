@@ -24,6 +24,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Random;
 
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btnSubmit, btnCamera, btnHistory;
@@ -197,7 +198,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Set your file path here
                 FileInputStream fstrm = new FileInputStream(imagepath);
                 // Set your server page url (and the file title/description)
-                HttpFileUpload hfu = new HttpFileUpload("http://10.205.0.33/imgupload.php", "ftitle", "fdescription", fname);
+                HttpFileUpload hfu = new HttpFileUpload("http://192.168.1.221/imgupload.php", "ftitle", "fdescription", fname);
                 upflag = hfu.Send_Now(fstrm);
             } catch (FileNotFoundException e) {
                 // Error: File not found

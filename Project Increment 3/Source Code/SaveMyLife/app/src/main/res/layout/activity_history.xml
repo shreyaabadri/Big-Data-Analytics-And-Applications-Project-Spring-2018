@@ -11,7 +11,8 @@
         android:id="@+id/tvHeading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:background="#069c88"
         android:gravity="center_horizontal"
         android:padding="5dp"
@@ -20,6 +21,51 @@
         android:textColor="#fff"
         android:textSize="20dp" />
 
+    <TableLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvHeading">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="serif"
+                android:text="Date"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="serif"
+                android:text="Food"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="serif"
+                android:text="Calories"
+                android:textColor="#000" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dip"
+            android:background="#ff0000" />
+    </TableLayout>
     <Button
         android:id="@+id/btnAddFood"
         android:layout_width="wrap_content"
@@ -36,11 +82,10 @@
     <TextView
         android:id="@+id/showContents"
         android:layout_width="match_parent"
-        android:layout_height="355dp"
+        android:layout_height="359dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="77dp"
         android:text="TextView" />
-
 </RelativeLayout>
