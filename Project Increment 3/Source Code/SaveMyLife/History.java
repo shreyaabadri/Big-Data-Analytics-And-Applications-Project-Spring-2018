@@ -86,35 +86,7 @@ public class History extends AppCompatActivity {
     }
 
     public void load() {
-//        String date = new SimpleDateFormat("yyyy/MM/dd HH:mm", Locale.getDefault()).format(new Date());
-//        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/MyHistory";
-//        String[] loadtext = Load(new File(path + "/history.txt"));
-//
-//        String finaltext = "";
-//
-//        for (int i = 0; i < loadtext.length; i++) {
-//            finaltext += loadtext[i] + System.getProperty("line.separator");
-//        }
-//        finaltext = finaltext.substring(1, finaltext.length() - 2);
-//        String[] records = finaltext.split("\\}\\{");
-//        String[] record;
-//        String finaltextD = "";
-//        String finaltextF = "";
-//        String finaltextC = "";
-//        System.out.println();
-//        for (int x = 0; x < records.length; x++){
-//            record = records[x].split(",");
-//            String part1 = record[0].split(":")[1];
-//            part1 = part1.substring(2, part1.length() - 1);
-//            String part2 = record[1].split(":")[1];
-//            finaltextD += date + "\n";
-//            finaltextF += part1 + "\n";
-//            finaltextC += part2 + "\n";
-//        }
-//        textViewDate.setText(finaltextD);
-//        textViewFood.setText(finaltextF);
-//        textViewCalories.setText(finaltextC);
-
+        String date = new SimpleDateFormat("yyyy/MM/dd HH:mm", Locale.getDefault()).format(new Date());
         String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/MyHistory";
         String[] loadtext = Load(new File(path + "/history.txt"));
 
@@ -125,15 +97,19 @@ public class History extends AppCompatActivity {
         }
         finaltext = finaltext.substring(1, finaltext.length() - 2);
         String[] records = finaltext.split("\\}\\{");
+        String[] record;
         String finaltextD = "";
         String finaltextF = "";
         String finaltextC = "";
+        System.out.println();
         for (int x = 0; x < records.length; x++){
-            String[] record = records[x].split(",");
-            finaltextD += record[0]+"\n";
-            finaltextF += record[1]+"\n";
-            finaltextC += record[2]+"\n";
-
+            record = records[x].split(",");
+            String part1 = record[0].split(":")[1];
+            part1 = part1.substring(2, part1.length() - 1);
+            String part2 = record[1].split(":")[1];
+            finaltextD += date + "\n";
+            finaltextF += part1 + "\n";
+            finaltextC += part2 + "\n";
         }
         textViewDate.setText(finaltextD);
         textViewFood.setText(finaltextF);

@@ -16,7 +16,7 @@
         android:background="#069c88"
         android:gravity="center_horizontal"
         android:padding="5dp"
-        android:text="History"
+        android:text="Predictions"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#fff"
         android:textSize="20dp" />
@@ -35,29 +35,29 @@
 
             <TextView
                 android:id="@+id/name"
-                android:layout_width="match_parent"
+                android:layout_width="116dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="serif"
-                android:text="Date"
+                android:text="Clarifai"
                 android:textColor="#000" />
 
             <TextView
                 android:id="@+id/age"
-                android:layout_width="match_parent"
+                android:layout_width="108dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="serif"
-                android:text="Food"
+                android:text="Tensorflow"
                 android:textColor="#000" />
 
             <TextView
                 android:id="@+id/position"
-                android:layout_width="match_parent"
+                android:layout_width="115dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="serif"
-                android:text="Calories"
+                android:text="TensorflowLite"
                 android:textColor="#000" />
         </TableRow>
 
@@ -66,6 +66,30 @@
             android:layout_height="3dip"
             android:background="#ff0000" />
     </TableLayout>
+
+    <TextView
+        android:id="@+id/showDate"
+        android:layout_width="170dp"
+        android:layout_height="351dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/showFood"
+        android:layout_width="110dp"
+        android:layout_height="351dp"
+        android:layout_centerInParent="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/showCalories"
+        android:layout_width="115dp"
+        android:layout_height="349dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:text="TextView" />
     <Button
         android:id="@+id/btnAddFood"
         android:layout_width="wrap_content"
@@ -78,14 +102,4 @@
         android:padding="10dp"
         android:text="Add Another Food"
         android:textColor="#ffffff" />
-
-    <TextView
-        android:id="@+id/showContents"
-        android:layout_width="match_parent"
-        android:layout_height="359dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="77dp"
-        android:text="TextView" />
 </RelativeLayout>
